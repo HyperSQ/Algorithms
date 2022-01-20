@@ -28,11 +28,13 @@ struct nonro_treap{
 		update(u);
 	}
 	node *merge(node *u,node *v){
-		if(u->empty()||v->empty()){
-			return u->empty()?v:u;
+		if(u->empty()||v->empty()) return u->empty()?v:u;
+		if(u->p>v->p){
+			u->r=merge(u->r,v),update(u);return u;
 		}
-		if(u->p>v->p) u->r=merge(u->r,v),update(u);
-		else v->l=merge(u,v->l),update(v);
+		else{
+			v->l=merge(u,v->l),update(v);return v;
+		}
 	}
 	inline void insert(int key){
 		split(root,key,a,b);
