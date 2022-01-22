@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstdlib>
-//文艺平衡树 (无旋Treap) 
+//脦脛脪脮脝陆潞芒脢梅 (脦脼脨媒Treap) 
 struct node{
 	node *l,*r;
 	int val,p,sz,lz;
